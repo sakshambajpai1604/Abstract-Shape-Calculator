@@ -1,17 +1,21 @@
 package com.saksham;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        ArrayList<Shape> shapes = new ArrayList<>();
+
+        shapes.add(new Circle("Red", 5));
+        shapes.add(new Rectangle("Blue", 4, 6));
+        shapes.add(new Triangle("Green", 3, 4, 5));
+
+        for (Shape shape : shapes) {
+            System.out.printf("%.2f%n", shape.area());
         }
+
+        // Uncommenting the line below will cause a compile-time error
+        // Shape s = new Shape("Black");
     }
 }
